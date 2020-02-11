@@ -1,7 +1,7 @@
 #language: en
 Feature: Validate SHA256 installation Ruby file
 
-    @cleardownload
+    @cleardownload @solo
     Scenario Outline: Validate SHA256 Ruby file
       Given is Ruby site
       When click in link DOWNLOAD
@@ -12,5 +12,5 @@ Feature: Validate SHA256 installation Ruby file
     Examples: Version
       | Version |
       | "2.7.0" |
-      | "2.6.5" |
-      | "2.5.7" |
+      # | "2.6.5" |
+      # | "2.5.7" |

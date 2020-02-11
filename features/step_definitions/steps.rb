@@ -15,3 +15,7 @@ Then("validate sha256 of the downloaded file") do
     expect(ruby_hash_downloaded[0]).to eql(@ruby_hash)
     puts @ruby_hash.to_s
 end
+
+Then("http status code {int}") do |status_code|
+  expect(@response.code).to eql(200)
+end
