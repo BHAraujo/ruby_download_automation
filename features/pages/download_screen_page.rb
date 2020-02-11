@@ -1,13 +1,15 @@
 class DownloadPage < SitePrism::Page
   set_url ""
 
-  element :twenty_seven_hash, :xpath, "//*[@id='content']/ul[2]/li[1]/ul/li[1]/text()"
-  element :twenty_six_five_hash, :xpath, "//*[@id='content']/ul[2]/li[1]/ul/li[2]/text()"
-  element :twenty_six_five_seven, :xpath, "//*[@id='content']/ul[2]/li[1]/ul/li[3]/text()"
+  element :link_twenty_seven, "#content > ul:nth-child(10) > li:nth-child(1) > ul > li:nth-child(1) > a"
+  element :link_twenty_six_five, "#content > ul:nth-child(10) > li:nth-child(1) > ul > li:nth-child(2) > a"
+  element :link_twenty_six_five_seven, "#content > ul:nth-child(10) > li:nth-child(1) > ul > li:nth-child(3) > a"
 
-  def hash_version(version)
-    dict_hash = {"2.7.0": twenty_seven_hash.text, "2.6.5": twenty_six_five_hash.text, "2.5.7": twenty_six_five_seven.text}
-    dict_hash[version.to_sym]
+
+  def link_version(version)
+    dict_version = {"2.7.0": link_twenty_seven, "2.6.5": link_twenty_six_five,
+                    "2.5.7": link_twenty_six_five_seven}
+    dict_version[version.to_sym]
   end
 
 end

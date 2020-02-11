@@ -1,4 +1,6 @@
 And("download version Ruby {string}") do |version|
-  byebug
-  page.click_link("#{RUBY_VERSION}#{version[0..2]}/ruby-#{version}.tar.gz")
+    @version = version
+    download_screen_page.link_version(@version).click
+    @ruby_hash = RUBY_VERSION_HASH[@version]
+    @path_download = "#{Dir.home}/Downloads/ruby-#{@version}.tar.gz"
 end
