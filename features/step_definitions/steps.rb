@@ -13,7 +13,7 @@ Then("validate sha256 of the downloaded file") do
     get_hash_file = "sha256sum #{Dir.home}/Downloads/ruby-#{@version}.tar.gz"
     ruby_hash_downloaded = %x[#{get_hash_file}].split(" ")
     expect(ruby_hash_downloaded[0]).to eql(@ruby_hash)
-    puts @ruby_hash.to_s
+    base_page.allure_take_screenshot(page, "hello.png")
 end
 
 Then("http status code {int}") do |status_code|

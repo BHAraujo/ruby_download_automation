@@ -19,7 +19,6 @@ World(HelperRequests)
 World(Helpers)
 
 
-
 ENVIRONMENT = YAML.load_file("cucumber.yml")
 BROWSER = ENVIRONMENT["browser"]
 

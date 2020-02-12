@@ -9,4 +9,8 @@ module HelperPages
   def download_screen_page
     @download_screen_page ||= DownloadPage::new
   end
+
+  def base_page
+    @base_page ||= BasePage::new
+  end
 end
