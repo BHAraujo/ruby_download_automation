@@ -10,7 +10,7 @@ module Helpers
        type: Allure::ContentType::PNG,
       test_case: true
       )
-      embed(@path, "Screenshot CLIQUE AQUI")
+      attach(@path, "Screenshot CLIQUE AQUI")
     end
 
 end
